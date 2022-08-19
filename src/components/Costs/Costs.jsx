@@ -8,9 +8,9 @@ const Costs = (props) => {
   return (
     <Card className='costs'>
      <CostItem 
-          date={props.costs[0].date}
-          description={props.costs[0].description}
-          amount={props.costs[0].amount}
+            date={props.costs[0].date}
+            description={props.costs[0].description}
+            amount={props.costs[0].amount}
         />
 
         <CostItem 
