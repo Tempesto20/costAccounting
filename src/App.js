@@ -1,4 +1,5 @@
 import Costs from "./components/Costs/Costs";
+import NewCost from "./components/NewCost/NewCost";
 
 
 
@@ -29,12 +30,13 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-      <h1>START PROJICT</h1>
+      <NewCost />
         <Costs 
               costs={costs}
               />
 
       </header>
+
     </div>
   );
 }
