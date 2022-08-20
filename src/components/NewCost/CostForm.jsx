@@ -4,26 +4,41 @@ import './CostForm.css';
 
  const CostForm =()=> {
 
-    const [name, setName] = useState('');
+    //const [name, setName] = useState('');
+    //const [amount, setAmount] = useState('');
+    //const [date, setDate] = useState('');
 
-    const [amount, setAmount] = useState('');
-
-    const [date, setDate] = useState('');
+    const [userInput, setUserInput] = useState({
+        name: '',
+        amount: '',
+        date: ''
+    });
 
     const nameChangeHandler =(event)=>{
-        console.log(event);
-        setName(event.target.value);
+        //  setName(event.target.value); альтернативный вариант 
+        setUserInput({
+            ...userInput, //сохраняем все предыдущие значения кроме name в объекте
+            name:event.target.value
+        });
     }
 
     const amountChangeHandler =(event)=>{
-        setAmount(event.target.value);
+        //  setAmount(event.target.value); альтернативный вариан
+        setUserInput({
+            ...userInput, //сохраняем все предыдущие значения кроме amount в объекте
+            amount:event.target.value
+        });
     }
 
     const dateChangeHandler =(event)=>{
-        setDate(event.target.value);
+        //  setDate(event.target.value); альтернативный вариан
+        setUserInput({
+            ...userInput, //сохраняем все предыдущие значения кроме date в объекте
+            date:event.target.value
+        });
     }
 
-
+//40
 
   return (
 
