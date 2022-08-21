@@ -4,45 +4,71 @@ import './CostForm.css';
 
  const CostForm =()=> {
 
-    //const [name, setName] = useState('');
-    //const [amount, setAmount] = useState('');
-    //const [date, setDate] = useState('');
+    const [inputName, setInputName] = useState('');
+    const [inputAmount, setInputAmount] = useState('');
+    const [inputDate, setInputDate] = useState('');
 
+    /*
     const [userInput, setUserInput] = useState({
         name: '',
         amount: '',
         date: ''
     });
-
+*/
     const nameChangeHandler =(event)=>{
-        //  setName(event.target.value); альтернативный вариант 
+        setInputName(event.target.value); //альтернативный вариант 
+          //console.log(event.target.value);
+        /*
         setUserInput({
             ...userInput, //сохраняем все предыдущие значения кроме name в объекте
             name:event.target.value
         });
+        */
+       /*
+        setUserInput((previousState) =>{
+            return {
+                ...previousState,
+                name:event.target.value
+            }
+        })
+        */
     }
 
     const amountChangeHandler =(event)=>{
-        //  setAmount(event.target.value); альтернативный вариан
-        setUserInput({
+        setInputAmount(event.target.value); //альтернативный вариан
+        /*
+            setUserInput({
             ...userInput, //сохраняем все предыдущие значения кроме amount в объекте
             amount:event.target.value
         });
+        */
     }
 
     const dateChangeHandler =(event)=>{
-        //  setDate(event.target.value); альтернативный вариан
-        setUserInput({
+        setInputDate(event.target.value); //альтернативный вариан
+        /*
+          setUserInput({
             ...userInput, //сохраняем все предыдущие значения кроме date в объекте
             date:event.target.value
         });
+        */
     }
 
-//40
+//41
 
+    const submitHandler=(event)=>{
+        event.preventDefault(); //предотвращает перезапуск страницы при нажатии на кнопку
+        
+        const costData = {
+            name: inputName,
+            amount: inputAmount,
+            date: new Date(inputDate)
+        }
+        console.log(costData);
+    }
   return (
 
-        <form>
+        <form onSubmit={submitHandler}>
 
             <div className="new-cost__controls">
                 <div className="new-cost__control">
