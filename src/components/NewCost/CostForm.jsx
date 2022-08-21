@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './CostForm.css';
 
 
- const CostForm =()=> {
+ const CostForm =(props)=> {
 
     const [inputName, setInputName] = useState('');
     const [inputAmount, setInputAmount] = useState('');
@@ -64,10 +64,14 @@ import './CostForm.css';
             amount: inputAmount,
             date: new Date(inputDate)
         }
-        console.log(costData);
-        setInputName('');
-        setInputAmount('');
-        setInputDate('');
+        
+        //console.log(costData);
+
+        props.onSaveCostData(costData);
+
+        setInputName('');   //отчистка данных из импута в форме после ввода пользователя   
+        setInputAmount(''); //отчистка данных из импута в форме после ввода пользователя
+        setInputDate('');   //отчистка данных из импута в форме после ввода пользователя
     }
   return (
 
