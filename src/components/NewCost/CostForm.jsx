@@ -65,6 +65,9 @@ import './CostForm.css';
             date: new Date(inputDate)
         }
         console.log(costData);
+        setInputName('');
+        setInputAmount('');
+        setInputDate('');
     }
   return (
 
@@ -73,17 +76,17 @@ import './CostForm.css';
             <div className="new-cost__controls">
                 <div className="new-cost__control">
                     <label>Название</label>
-                    <input type="text" onChange={nameChangeHandler}/>
+                    <input type="text" onChange={nameChangeHandler} value={inputName}/>
                 </div>
 
                 <div className="new-cost__control">
                     <label>Сумма</label>
-                    <input type="number" min='0.1' step='0.1' onChange={amountChangeHandler}/>
+                    <input type="number" min='0.1' step='0.1' onChange={amountChangeHandler} value={inputAmount}/>
                 </div>
 
                 <div className="new-cost__control">
                     <label>Дата</label>
-                    <input type="date" min='2019-01-01' step='2022-12-31' onChange={dateChangeHandler}/>
+                    <input type="date" min='2019-01-01' step='2022-12-31' onChange={dateChangeHandler} value={inputDate}/>
                 </div>
 
                 <div className="new-cost__actions">
