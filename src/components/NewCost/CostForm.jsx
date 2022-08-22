@@ -54,7 +54,7 @@ import './CostForm.css';
         */
     }
 
-//41
+
 
     const submitHandler=(event)=>{
         event.preventDefault(); //предотвращает перезапуск страницы при нажатии на кнопку
