@@ -13,18 +13,25 @@ const INITIAL_COSTS =[
   
   {
     id: 'c2',
-    date: new Date(2021, 2, 2),
+    date: new Date(2020, 2, 2),
     description: 'Ноут',
     amount: 200
   },
   
   {
     id: 'c3',
-    date: new Date(2021, 3, 3),
+    date: new Date(2019, 3, 3),
     description: 'Чайник',
     amount: 300
-  }
+  },
 
+  {
+    id: 'c4',
+    date: new Date(2022, 1, 1),
+    description: 'Штанга',
+    amount: 700
+  }
+  
 ]; 
 
 const App = () => {

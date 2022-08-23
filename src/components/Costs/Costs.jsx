@@ -6,13 +6,17 @@ import CostsFilter from './CostsFilter';
 
 const Costs = (props) => {
 
-  const [selectedYear, setSelectedYear] =useState('2021');
+  const [selectedYear, setSelectedYear] =useState('2019');
 
 const yearChangeHandler =(year)=>{
   console.log(year);
   setSelectedYear(year);
 }
 
+  const filteredCosts = props.costs.filter(cost =>{
+    return cost.date.getFullYear().toString() === selectedYear
+  })
+  
   //setSelectedYear('');
   
 
@@ -27,7 +31,7 @@ return (
         />
 
           { 
-          props.costs.map(  (cost) =>(
+          filteredCosts.map(  (cost) =>(
             <CostItem 
               key={cost.id}
               date={cost.date}
