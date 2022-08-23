@@ -60,7 +60,7 @@ import './CostForm.css';
         event.preventDefault(); //предотвращает перезапуск страницы при нажатии на кнопку
         
         const costData = {
-            name: inputName,
+            description: inputName,
             amount: inputAmount,
             date: new Date(inputDate)
         }
