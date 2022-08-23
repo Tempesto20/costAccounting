@@ -19,6 +19,19 @@ const yearChangeHandler =(year)=>{
   
   //setSelectedYear('');
   
+  let costsContent = <p> в этом году расходов не имеется</p>; 
+
+  if(filteredCosts.length > 0){
+    costsContent =filteredCosts.map(  (cost) =>(
+      <CostItem 
+        key={cost.id}
+        date={cost.date}
+        description={cost.description}  
+        amount={cost.amount}
+      />
+      )
+    )
+  }
 
 return (
     <div className="">
@@ -30,17 +43,26 @@ return (
           onChangeYear = {yearChangeHandler}
         />
 
-          { 
-          filteredCosts.map(  (cost) =>(
-            <CostItem 
-              key={cost.id}
-              date={cost.date}
-              description={cost.description}
-              amount={cost.amount}
-            />
-          )
-          )   
-          }
+        {costsContent}
+
+          {/*          
+          {filteredCosts.length === 0   
+                && 
+            <p> в этом году расходов не имеется</p>}
+
+          {filteredCosts.length > 0  
+              &&
+            filteredCosts.map(  (cost) =>(
+              <CostItem 
+                key={cost.id}
+                date={cost.date}
+                description={cost.description}  
+                amount={cost.amount}
+              />
+            )
+          )}
+          */}
+          
 
 
           {/*
