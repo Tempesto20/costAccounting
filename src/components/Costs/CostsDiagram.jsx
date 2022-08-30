@@ -5,17 +5,17 @@ function CostsDiagram(props) {
 
     const diagramDataSets = [
         {label: 'Jan', value:0},
-        {label: 'Feb', value:1},
-        {label: 'Mar', value:2},
-        {label: 'Apr', value:3},
-        {label: 'May', value:4},
-        {label: 'Jun', value:5},        
-        {label: 'Jul', value:6},
-        {label: 'Aug', value:7},
-        {label: 'Sep', value:8},
-        {label: 'Oct', value:9},
-        {label: 'Nov', value:10},
-        {label: 'Dec', value:11}
+        {label: 'Feb', value:0},
+        {label: 'Mar', value:0},
+        {label: 'Apr', value:0},
+        {label: 'May', value:0},
+        {label: 'Jun', value:0},        
+        {label: 'Jul', value:0},
+        {label: 'Aug', value:0},
+        {label: 'Sep', value:0},
+        {label: 'Oct', value:0},
+        {label: 'Nov', value:0},
+        {label: 'Dec', value:0}
     ];
 
 
