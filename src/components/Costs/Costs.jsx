@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import Card from '../UI/Card';
-import CostItem from './CostItem';
+//import CostItem from './CostItem';
+import CostList from './CostList';
 import './Costs.css';
 import CostsFilter from './CostsFilter';
 
@@ -9,7 +10,7 @@ const Costs = (props) => {
   const [selectedYear, setSelectedYear] =useState('2019');
 
 const yearChangeHandler =(year)=>{
-  console.log(year);
+ // console.log(year);
   setSelectedYear(year);
 }
 
@@ -19,19 +20,8 @@ const yearChangeHandler =(year)=>{
   
   //setSelectedYear('');
   
-  let costsContent = <p> в этом году расходов не имеется</p>; 
 
-  if(filteredCosts.length > 0){
-    costsContent =filteredCosts.map(  (cost) =>(
-      <CostItem 
-        key={cost.id}
-        date={cost.date}
-        description={cost.description}  
-        amount={cost.amount}
-      />
-      )
-    )
-  }
+  
 
 return (
     <div className="">
@@ -43,7 +33,7 @@ return (
           onChangeYear = {yearChangeHandler}
         />
 
-        {costsContent}
+        <CostList costs={filteredCosts}/>
 
           {/*          
           {filteredCosts.length === 0   
@@ -88,6 +78,7 @@ return (
       </Card>
     
     </div>
+    
   );
 }
 

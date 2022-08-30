@@ -73,6 +73,8 @@ import './CostForm.css';
         setInputAmount(''); //отчистка данных из импута в форме после ввода пользователя
         setInputDate('');   //отчистка данных из импута в форме после ввода пользователя
     }
+
+
   return (
 
         <form onSubmit={submitHandler}>
@@ -94,8 +96,8 @@ import './CostForm.css';
                 </div>
 
                 <div className="new-cost__actions">
-                    <button type='submit' >Добавить расходы</button>
-
+                    <button type='submit'> Добавить расходы    </button>
+                    <button type='button' onClick={props.onCancel}> Отмена   </button>
                 </div>
 
             </div>
